@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Of Users</title>
+    <style>
+      button {
+        background-color: white;
+        border: none;
+      }
+    </style>
+</head>
+<body>
+  <a href="/user/add">Add New</a> 
+  
+
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th colspan="2">Operation</th>
+        </tr>
+        <% user.forEach(user => { %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.password %></td>
+            <td><a href="/user/edit/<%= user.id %>">Edit</a></td>
+           <td>
+            <form action="/user/delete/<%= user.id %>" method="post">
+              <button type="submit" onclick="return confirm(`are you sure to delete <%= user.name %>`)">Delete</button>
+          </form>
+        </td>
+          </tr>
+
+        <% }) %>
+    </table>
+</body>
+</html>

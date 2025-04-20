@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/edit/<%= user.id %>" method="post">
+        <label for="">Id</label>
+        <input type="text" name="id" value="<%= user.id %>"><br>
+        <label for="">Name</label>
+        <input type="text" name="name" value="<%= user.name %>"><br>
+        <label for="">Password</label>
+        <input type="text" name="password" value="<%= user.password %>"><br>
+
+        <button type="submit">Save Changes</button>
+        <a href="/user">Cancel</a>
+    </form>
+</body>
+</html>
