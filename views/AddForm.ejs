@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add New User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <form action="/user/add" method="post">
-        <label for="">Id</label>
-        <input type="text" name="id"><br>
-        <label for="">Name</label>
-        <input type="text" name="name"><br>
-        <label for="">Password</label>
-        <input type="text" name="password"><br>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
 
-        <button type="submit">Save</button>
-       <a href="/user">Cancel</a>      
-  
+  <div class=" p-8 roundend-lg shadow-md w-[40%]  bg-blue-100 max-w-auto">
+      <h1 class="text-center text-lg text-blue-500">Add New User</h1>
+    <form action="/user/add" method="post">
+        <label for="" class="text-bold text-blue-500">Id</label>
+        <input type="text" name="id" class="w-full py-2"><br>
+        <label for="" class="text-bold text-blue-500">Name</label>
+        <input type="text" name="name" class="w-full py-2"><br>
+        <label for="" class="text-bold text-blue-500">Password</label>
+        <input type="password" name="password" class="w-full py-2"><br>
+    
+        <div class="flex justify-between items-center ">
+           <button type="submit" class="bg-blue-500 text-white p-2 hover:bg-blue-600 px-3 mt-4 rounded-lg shadow-lg">Save User</button>
+           <a href="/user" class="bg-red-500 p-2 px-5 me-1 mt-4 rounded-lg text-white hover:bg-red-600 shadow-lg">Cancel</a>
+        </div>
     </form>
 </body>
 </html>
