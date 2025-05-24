@@ -9,6 +9,7 @@
 <body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
     
   <div class=" p-8 roundend-lg shadow-md w-[40%]  bg-blue-100 max-w-auto">
+    <h1 class="text-center text-lg text-blue-500">Update User</h1>
     <form action="/user/edit/<%= user.id %>" method="post" >
         <label for="" class="text-bold text-blue-500">Id</label>
         <input type="text" name="id" value="<%= user.id %>" class="w-full py-2"><br>
