@@ -6,17 +6,20 @@
     <title>Update User</title>
         <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <form action="/user/edit/<%= user.id %>" method="post">
-        <label for="">Id</label>
-        <input type="text" name="id" value="<%= user.id %>"><br>
-        <label for="">Name</label>
-        <input type="text" name="name" value="<%= user.name %>"><br>
-        <label for="">Password</label>
-        <input type="text" name="password" value="<%= user.password %>"><br>
-
-        <button type="submit">Save Changes</button>
-        <a href="/user">Cancel</a>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+    
+  <div class=" p-8 roundend-lg shadow-md w-[40%]  bg-blue-100 max-w-auto">
+    <form action="/user/edit/<%= user.id %>" method="post" >
+        <label for="" class="text-bold text-blue-500">Id</label>
+        <input type="text" name="id" value="<%= user.id %>" class="w-full py-2"><br>
+        <label for=""  class="text-bold text-blue-500" >Name</label>
+        <input type="text" name="name" value="<%= user.name %>" class="w-full py-2"><br>
+        <label for=""  class="text-bold text-blue-500">Password</label>
+        <input type="text" name="password" value="<%= user.password %>" class="w-full py-2"><br>
+        <div class="flex justify-between items-center ">
+           <button type="submit" class="bg-blue-500 text-white p-2 hover:bg-blue-600 px-3 mt-4 rounded-lg shadow-lg">Save Changes</button>
+           <a href="/user" class="bg-red-500 p-2 px-5 me-1 mt-4 rounded-lg text-white hover:bg-red-600">Cancel</a>
+        </div>
     </form>
 </body>
 </html>
