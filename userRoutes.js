@@ -21,7 +21,6 @@ router.get('/', async (req, res) => {
 // get data based on the specified Id before update
 router.get('/edit/:id', async (req, res) => {
     try {
-
     
     const id = parseInt(req.params.id);
     const index = await user.findOne({id: id});
@@ -93,4 +92,4 @@ router.post('/add', async (req, res) => {
 });
 module.exports = router;
 
-// I'll perform validation and styling  at hte school
+// I'll perform validation and styling  at the school

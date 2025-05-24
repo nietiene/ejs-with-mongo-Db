@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
 const userRoutes = require("./userRoutes.js");
+const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
@@ -10,12 +11,14 @@ App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({extended: true}));
 App.set("view engine", "ejs");
 App.set("views", path.join(__dirname, "views"));
+App.use(cors());
 
 App.use("/user", userRoutes);
 
 App.get('/', (req, res) => {
   res.send("welcome");
 })
+
 const URL = process.env.URL || "mongodb+srv://mongoself:factorise@etiene.jjrlz2m.mongodb.net/mongo";
 mongoose.connect(URL, {
     useNewUrlParser: true,
